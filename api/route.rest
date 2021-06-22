@@ -1,0 +1,51 @@
+GET http://localhost:3000/items
+
+###
+
+GET http://localhost:3000/items/6076d8b25f5c2c1880d7f7f3
+
+###
+
+PATCH http://localhost:3000/items/6076087251138b45488184dd
+Content-Type: application/json
+
+{
+    "name": "Megváltozott Csoki2",
+    "quantity": "2000000",
+    "price": "1200005"
+}
+
+###
+
+DELETE http://localhost:3000/items/6074c10c018cb91a5cba0097
+
+###
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{
+    "name": "Kenyér",
+    "quantity": "30",
+    "price": "300",
+    "category": "Pékárú"
+}
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "username": "admin1234",
+    "password": "password123"
+}
+
+
+### 
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "username": "admin1234",
+    "password": "password123"
+}
