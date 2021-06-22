@@ -1,0 +1,85 @@
+<!--<mat-spinner *ngIf="loading"></mat-spinner>
+<mat-toolbar *ngIf="successMsg" color="accent">{{ successMsg }}</mat-toolbar>
+<mat-toolbar *ngIf="errorMsg" color="warn">{{ errorMsg }}</mat-toolbar>       *ngIf="!loading && !loading" -->
+<h1 class="maintitle">List of Items</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <button class="button" mat-raised-button color="primary" (click)="onCreate()"> + Add Item</button>
+    </div>
+    <div class="col-5">
+      <mat-form-field>
+        <input matInput (keyup)="filter($event.target.value)" type="text" autocomplete="off" placeholder="Search"/>
+      </mat-form-field>
+    </div>
+    <!--<div class="col-4">
+      <mat-select [(ngModel)]="SelectColumn" type="text" placeholder="Select Column" multiple>
+        <mat-option value="name">Name</mat-option>
+        <mat-option value="qunatity">Quantity</mat-option>
+        <mat-option value="price">Price</mat-option>
+        <mat-option value="category">Category</mat-option>
+      </mat-select>
+    </div>-->
+  </div>
+</div>
+
+<div class="mat-elevation-z8">
+    <mat-table [dataSource]="listData2" matSort>
+      <ng-container matColumnDef="name">
+        <mat-header-cell  *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+        <mat-cell class="matHeader" *matCellDef="let item" class="cell-item">{{ item.name }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="quantity">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</mat-header-cell>
+        <mat-cell class="matHeader" *matCellDef="let item" class="cell-item">{{ item.quantity }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Price</mat-header-cell>
+        <mat-cell class="matHeader" *matCellDef="let item" class="cell-item">{{ item.price }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="category">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Category</mat-header-cell>
+        <mat-cell class="matHeader" *matCellDef="let item" class="cell-item">{{ item.category }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="update">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell>
+          <button mat-icon-button *matCellDef="let item" (click)="onEdit(item._id)"><mat-icon>launch</mat-icon></button>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell>
+          <button mat-icon-button color="warn" *matCellDef="let item" (click)="deleteItem(item._id)"><mat-icon>delete_outline</mat-icon></button>
+        </mat-cell>
+      </ng-container>
+
+
+      <!--<ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef class="cell-name">Delete</th>
+        <th
+          mat-cell
+          *matCellDef="let item">
+          <button
+            (click)="deleteItem(item._id)"
+            mat-raised-button
+            color="warn">Delete</button></th>
+      </ng-container>
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef class="cell-name">Edit</th>
+        <th
+          mat-cell
+          *matCellDef="let item">
+          <button
+            (click)="deleteItem(item._id)"
+            mat-raised-button
+            color="accent">Edit</button></th>
+      </ng-container>-->
+      <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+      <mat-row *matRowDef="let items, columns: columns"></mat-row>
+    </mat-table>
+    <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>
+</div>

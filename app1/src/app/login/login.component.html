@@ -1,0 +1,15 @@
+<div class="bigdiv" style="background-image: url('storageselves.jpg');">
+<h1 class="main-title">Grocery Store Goods App</h1>
+<h1 class="login">Login</h1>
+<div class="form-container">
+  <form (submit)="onLoginSubmit()">
+    <mat-form-field>
+      <input autocomplete="off" matInput placeholder="Username" id="username" [(ngModel)]="username" name="username">
+    </mat-form-field>
+    <mat-form-field>
+      <input autocomplete="off" type="password"matInput placeholder="Password" id="password" [(ngModel)]="password" name="password">
+    </mat-form-field>
+    <button class="but" mat-raised-button color="primary">Login</button>
+  </form>
+</div>
+</div>

@@ -1,0 +1,33 @@
+<!--<mat-toolbar *ngIf="successMsg" color="accent">{{ successMsg }}</mat-toolbar>
+<mat-toolbar *ngIf="errorMsg" color="warn">{{ errorMsg }}</mat-toolbar>   (submit)="createItem()"-->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Add Item</h1>
+    </div>
+    <div class="col"></div>
+    <div class="col">
+      <button class="button" mat-raised-button color="primary" (click)="onClose()"> X </button>
+    </div>
+  </div>
+</div>
+
+<div class="form-container">
+  <form (submit)="createItem()">
+    <mat-form-field>
+      <input [(ngModel)]="name" name="name" autocomplete="off" matInput placeholder="Name">
+    </mat-form-field>
+    <mat-form-field>
+      <input [(ngModel)]="quantity" name="quantity" autocomplete="off" matInput placeholder="Quantity">
+    </mat-form-field>
+    <mat-form-field>
+      <input [(ngModel)]="price" name="Price" autocomplete="off" matInput placeholder="Price">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Category" [(ngModel)]="category" name="category">
+        <mat-option *ngFor="let category of categories" [value]="category.value">{{category.value}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button class="button" mat-raised-button color="primary">Add Item</button>
+  </form>
+</div>

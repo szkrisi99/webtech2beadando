@@ -1,0 +1,28 @@
+table {
+  margin-top: 50px;
+  width: 100%;
+}
+
+
+
+.mat-header-cell {
+  text-align: right;
+}
+
+.matHeader {
+  text-align: right;
+  font-size: 50px;
+}
+
+.maintitle {
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  background-color: rgb(22, 43, 66);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.button {
+  background-color: rgb(22, 43, 66);
+}
