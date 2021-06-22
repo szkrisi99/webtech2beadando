@@ -1,2 +1,2 @@
-api -> npm run devStart
+api -> npm run devStart,
 app -> ng serve
